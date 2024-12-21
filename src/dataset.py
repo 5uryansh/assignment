@@ -51,13 +51,10 @@ df['embedding']=None
 device = "cuda" if torch.cuda.is_available() else "cpu"
 embedding_model = SentenceTransformer(model_name_or_path="all-mpnet-base-v2", device=device)
 embedding_model.to(device)
-batch_size = 64
 
-for start in tqdm(range(0, len(df), batch_size), desc="Encoding Embeddings"):
-    end = min(start + batch_size, len(df))
-    batch_texts = df['combined_text'].iloc[start:end].tolist()
-    batch_embeddings = embedding_model.encode(batch_texts, device=device, convert_to_tensor=True).cpu().tolist()
-    df.loc[start:end - 1, 'embedding'] = pd.Series(batch_embeddings).values
+for i in tqdm(range(len(df)), desc="Encoding Embeddings"):
+    df.loc[i, 'embedding'] = embedding_model.encode(df['combined_text'].iloc[i])
+
 print("Embeddings generated successfully.")
 
 # saving the embedded dataset as checkpoint
