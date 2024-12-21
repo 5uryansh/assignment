@@ -22,7 +22,7 @@ cd src
 python dataset.py
 ```
 #### Step 3
-Retrieving the data from the document.
+Retrieving the data from the document. The input is taken from input_output folder -> `query.json` in .json format.
 ```
 python main.py
 ```
