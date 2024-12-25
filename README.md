@@ -1,3 +1,6 @@
+## Introduction
+This repo perform similarity search using RAG model and return the summary of all the documents matched. The input are in the form of .json and stored in `input/ouput`.
+
 ## There are two ways of running this repository.
 1. Using Jupyter Notebook (preferably on kaggle)
 2. Using python script (need to run on kaggle for summarization only)
