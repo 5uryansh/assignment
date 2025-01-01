@@ -14,7 +14,7 @@ Or can be run directly on kaggle by clicking [here](https://www.kaggle.com/code/
 Clone the repository.
 #### Step 1
 ```
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 #### Step 2
 Downloading, cleaning and vectorising the dataset (needed to be done once).
